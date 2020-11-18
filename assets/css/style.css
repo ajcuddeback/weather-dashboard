@@ -43,6 +43,14 @@ input[type=text]:focus {
     background-color: white;
     height: 60vh;
 }
+.historybtn {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
 .left-content {
     flex: 25%;
     background-color: #f8f9fa;
@@ -108,4 +116,18 @@ input[type=text]:focus {
     height: 200px;
     width: 185px;
     border-radius: 5px;
+}
+.five-day-date {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 25px;
+}
+.five-day-img {
+    position: relative;
+    left: 35px;
+}
+.five-day-temp, .five-day-humidity {
+    margin-bottom: 10px;
+    margin-left: 8px;
+    font-size: large;
 }

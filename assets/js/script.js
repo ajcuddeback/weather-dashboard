@@ -124,18 +124,22 @@ var displayFiveDayForcast = function (data) {
 
         var fiveDayDate = dayjs(data.list[i].dt_txt).format('MM/DD/YYYY');
         var fiveDayDates = document.createElement("h3");
+        fiveDayDates.className = "five-day-date"
         fiveDayDates.textContent = fiveDayDate;
         fiveDayCard.appendChild(fiveDayDates);
 
         var fiveDayImg = document.createElement("img")
         fiveDayImg.setAttribute("src", "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png");
+        fiveDayImg.setAttribute("class", "five-day-img")
         fiveDayCard.appendChild(fiveDayImg);
 
         var fiveDayTemp = document.createElement("p");
+        fiveDayTemp.className = "five-day-temp"
         fiveDayTemp.textContent = "Temp: " + Math.floor(data.list[i].main.temp) + " F";
         fiveDayCard.appendChild(fiveDayTemp);
 
         var fiveDayHumidity = document.createElement("p");
+        fiveDayHumidity.className = "five-day-humidity"
         fiveDayHumidity.textContent = "Humidity: " + data.list[i].main.humidity + "%";
         fiveDayCard.appendChild(fiveDayHumidity);
     }
