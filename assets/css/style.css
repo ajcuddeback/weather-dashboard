@@ -3,7 +3,7 @@
 }
 
 header {
-    background-color: darkslategray;
+    background-color: #343a40;
     color: white;
     padding: 25px;
     text-align: center;
@@ -40,12 +40,12 @@ input[type=text]:focus {
     font-size: 15px;
 }
 .history {
-    background-color: floralwhite;
+    background-color: white;
     height: 60vh;
 }
 .left-content {
     flex: 25%;
-    background-color: bisque;
+    background-color: #f8f9fa;
     padding: 15px;
     height: 70vh;
 }
