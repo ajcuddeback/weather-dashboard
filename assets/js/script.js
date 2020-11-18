@@ -21,10 +21,13 @@ var formSubmitHandler = function (event) {
     }
 };
 
-var saveCities = function (cityObj) {
+var saveCities = function (city) {
     var currentCity = JSON.parse(localStorage.getItem('cityItems')) || [];
-    currentCity.push(cityObj);
-    localStorage.setItem('cityItems', JSON.stringify(currentCity))
+    let set =new Set(currentCity);
+    set.add(city);
+    const newArr = Array.from(set);
+    localStorage.setItem('cityItems', JSON.stringify(newArr))
+    
 }
 
 
@@ -38,17 +41,15 @@ var historyClickHandler = function (event) {
 }
 
 var getCurrentCityWeather = function (city) {
-    var cityObj = {
-        city: city
-    }
-
+    
+    
     var weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=0938c05e8d987103f9ba5cb07b6b876e&units=imperial";
     fetch(weatherApiUrl).then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
                 displayCurrentCityWeather(data);
                 getCurrentUvIndex(data);
-                saveCities(cityObj)
+                saveCities(city)
             })
         } else {
             alert("Please insert a valid city!");
@@ -61,13 +62,13 @@ var createHistoryButton = function() {
     var cityName = JSON.parse(localStorage.getItem('cityItems')) || [];
     
     historyWrapper.innerHTML = "";
-    cityName.forEach(element => {
+    for (var i = 0; i < cityName.length; i++) {
         var historyBtn = document.createElement("button");
         historyBtn.className = "historybtn"
-        historyBtn.textContent = element.city;
-        historyBtn.setAttribute("data-city", element.city)
+        historyBtn.textContent = cityName[i];
+        historyBtn.setAttribute("data-city", cityName[i])
         historyWrapper.appendChild(historyBtn);
-    })
+    }
 }
 createHistoryButton()
 
