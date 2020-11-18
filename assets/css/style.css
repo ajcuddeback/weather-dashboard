@@ -1,7 +1,10 @@
 * {
     margin: 0;
 }
-
+body {
+    color: white;
+    background-color: #0F4C75;
+}
 header {
     background-color: #343a40;
     color: white;
@@ -30,7 +33,7 @@ input[type=text] {
 input[type=text]:focus {
     border: 3px solid #555;
 }
-.search-form button {
+.search-form button, .delete-btn {
     padding: 11px;
     background-color: dodgerblue;
     outline: none;
@@ -38,6 +41,9 @@ input[type=text]:focus {
     color: floralwhite;
     font-weight: 600;
     font-size: 15px;
+}
+.delete-btn {
+    margin-left: 35%;
 }
 .history {
     background-color: white;
@@ -53,7 +59,6 @@ input[type=text]:focus {
 }
 .left-content {
     flex: 25%;
-    background-color: #f8f9fa;
     padding: 15px;
     height: 70vh;
 }
@@ -83,7 +88,12 @@ input[type=text]:focus {
 }
 .weather-img {
     position: relative;
-    bottom: 30px;
+    bottom: 10px;
+    left: 10px;
+    background-color: #3282C9;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
 }
 
 .safe-index {

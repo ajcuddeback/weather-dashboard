@@ -3,7 +3,7 @@ var citySearchEl = document.querySelector("#city");
 var currentDayContainer = document.querySelector(".current-day-content")
 var fiveDayWrapper = document.querySelector(".five-day-wrapper");
 var historyWrapper = document.querySelector(".history")
-
+var deleteBtn = document.querySelector(".delete-btn")
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -30,7 +30,10 @@ var saveCities = function (city) {
     
 }
 
-
+var deleteHistory = function() {
+    localStorage.clear();
+    location.reload();
+}
 
 var historyClickHandler = function (event) {
     var historyEl = event.target.getAttribute("data-city");
@@ -66,7 +69,7 @@ var createHistoryButton = function() {
         var historyBtn = document.createElement("button");
         historyBtn.className = "historybtn"
         historyBtn.textContent = cityName[i];
-        historyBtn.setAttribute("data-city", cityName[i])
+        historyBtn.setAttribute("data-city", cityName[i]);
         historyWrapper.appendChild(historyBtn);
     }
 }
@@ -166,3 +169,4 @@ var displayCurrentUvIndex = function (data) {
 
 formEl.addEventListener("submit", formSubmitHandler);
 historyWrapper.addEventListener("click", historyClickHandler);
+deleteBtn.addEventListener("click", deleteHistory)
