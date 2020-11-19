@@ -109,7 +109,7 @@ createHistoryButton()
 // Get the five day forcast
 var getFiveDayForcast = function (city) {
     // Declare five day URL
-    var fiveDayUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=0938c05e8d987103f9ba5cb07b6b876e&units=imperial";
+    var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=0938c05e8d987103f9ba5cb07b6b876e&units=imperial";
     // Fetch the API URL
     fetch(fiveDayUrl).then(function (response) {
         // If response is in 200's run this code...
@@ -129,7 +129,7 @@ var getFiveDayForcast = function (city) {
 // Get current UV index
 var getCurrentUvIndex = function (data) {
     // Declare UV API URL
-    var uvApiUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=0938c05e8d987103f9ba5cb07b6b876e";
+    var uvApiUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + data.coord.lat + "&lon=" + data.coord.lon + "&appid=0938c05e8d987103f9ba5cb07b6b876e";
     // Fetch API URL
     fetch(uvApiUrl).then(function (response) {
         // If response results in 200's run this code... 
