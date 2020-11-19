@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
+
+    <!-- Header -->
     <header>
         <h1>Weather Dashboard</h1>
     </header>
+
+    <!-- Main Content -->
     <main>
+
+        <!-- Left Hand Content -->
         <div class="left-content">
+
+            <!-- Form -->
             <form class="search-form">
                 <h3>Search for a City:</h3>
                 <input type="text" id="city" />
                 <button type="submit" class="search-btn">Search</button>
             </form>
             
-            <div class="history">
-                
-            </div>
+            <!-- History Tab -->
+            <div class="history"></div>
             <button class="delete-btn">Delete History</button>
         </div>
+
+        <!-- Right Hand Content -->
         <div class="right-content">
+
+            <!-- Current Day Conatiner -->
             <div class="current-day-content">
                 <div class="city-title-heading">
                     <h3 id="current-city"></h3><img class="weather-img" />
@@ -37,11 +46,11 @@
                 <p>Wind Speed: <span id="wind"></span> MPH</p>
                 <p>UV Index: <span id="uv"></span></p>
             </div>
+
+            <!-- 5 Day Forcast Conatiner -->
             <div class="five-day-content">
                 <h2>5-Day Forecast:</h2>
-                <div class="five-day-wrapper">
-                    
-                </div>
+                <div class="five-day-wrapper"></div>
             </div>
         </div>
     </main>
