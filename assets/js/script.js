@@ -162,7 +162,7 @@ var displayCurrentCityWeather = function (data) {
     currentCityEl.textContent = currentCity + "    " + dayjs().format('MM/DD/YYYY');
 
     // Change the weather icon 
-    weatherImg.setAttribute("src", "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
+    weatherImg.setAttribute("src", "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
 
     // Modify the text contents of temp, humidity, and wind speed
     tempEl.textContent = Math.floor(data.main.temp);
@@ -193,7 +193,7 @@ var displayFiveDayForcast = function (data) {
 
         // Append weather Icon
         var fiveDayImg = document.createElement("img")
-        fiveDayImg.setAttribute("src", "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png");
+        fiveDayImg.setAttribute("src", "https://openweathermap.org/img/wn/" + data.list[i].weather[0].icon + "@2x.png");
         fiveDayImg.setAttribute("class", "five-day-img")
         fiveDayCard.appendChild(fiveDayImg);
     
